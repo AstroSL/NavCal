@@ -20,10 +20,10 @@
             android:onClick="twitter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.046"
+            app:layout_constraintHorizontal_bias="0.308"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.131"
+            app:layout_constraintVertical_bias="0.925"
             app:srcCompat="@drawable/ic_twit" />
 
         <ImageView
@@ -36,7 +36,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/twitter"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.13"
+            app:layout_constraintVertical_bias="0.928"
             app:srcCompat="@drawable/ic_facebook" />
 
         <ImageView
@@ -49,8 +49,20 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/facebook"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.132"
+            app:layout_constraintVertical_bias="0.928"
             app:srcCompat="@drawable/ic_caltransweb" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="Caltrans Official Links"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.991" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -60,14 +72,6 @@
         android:orientation="vertical">
 
         <include layout="@layout/main_toolbar"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Dashboard"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="bottom"/>
 
     </LinearLayout>
 
