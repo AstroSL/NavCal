@@ -82,6 +82,16 @@ public class MainActivity extends AppCompatActivity {
         redirectActivity(this,Calculator.class);
     }
 
+    public void ClickCalculator2(View view){
+        //redirect activity to about us
+        redirectActivity(this,Calculator2.class);
+
+    }public void ClickHistory(View view) {
+        //recreate activty
+        MainActivity.redirectActivity(this, History.class);
+    }
+
+
     public void ClickAbout(View view){
         //redirect activity to about us
         redirectActivity(this,AboutUs.class);

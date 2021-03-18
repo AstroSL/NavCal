@@ -120,11 +120,24 @@ public class Calculator extends AppCompatActivity {
         recreate();
     }
 
+    public void ClickCalculator2(View view) {
+        //recreate activty
+        MainActivity.redirectActivity(this, Calculator2.class);
+    }
+
+    public void ClickHistory(View view) {
+        //recreate activty
+        MainActivity.redirectActivity(this, History.class);
+    }
+
     public void ClickDashboard(View view){
         //recreate activty
         MainActivity.redirectActivity(this,Dashboard.class);
-
     }
+
+
+
+
     public void ClickAbout(View view){
         //redirect activty to about us
         MainActivity.redirectActivity(this,AboutUs.class);

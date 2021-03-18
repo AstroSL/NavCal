@@ -47,6 +47,16 @@ public class Dashboard extends AppCompatActivity {
         MainActivity.redirectActivity(this, Calculator.class);
     }
 
+    public void ClickCalculator2(View view) {
+        //recreate activty
+        MainActivity.redirectActivity(this, Calculator2.class);
+    }
+
+    public void ClickHistory(View view) {
+        //recreate activty
+        MainActivity.redirectActivity(this, History.class);
+    }
+
     public void ClickAbout(View view){
         //redirect activty to about us
         MainActivity.redirectActivity(this,AboutUs.class);

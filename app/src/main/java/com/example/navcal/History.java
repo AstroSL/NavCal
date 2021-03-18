@@ -6,18 +6,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.os.Bundle;
 import android.view.View;
 
-public class AboutUs extends AppCompatActivity {
-    //initialize var
+public class History extends AppCompatActivity {
+
+
     DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_us);
+        setContentView(R.layout.activity_history);
+
         //assign var
         drawerLayout = findViewById(R.id.drawer_layout);
-
-
     }
 
     public void ClickMenu(View view) {
@@ -46,20 +46,17 @@ public class AboutUs extends AppCompatActivity {
         MainActivity.redirectActivity(this, Calculator.class);
     }
 
-    public void ClickCalculator2(View view) {
-        //recreate activty
-        MainActivity.redirectActivity(this, Calculator2.class);
-    }
-
-    public void ClickHistory(View view) {
-        //recreate activty
-        MainActivity.redirectActivity(this, History.class);
-    }
-
     public void ClickAbout(View view){
+        MainActivity.redirectActivity(this, AboutUs.class);
+
+    }
+
+    public void ClickHistory(View view){
         recreate();
 
     }
+
+
 
     @Override
     protected void onPause() {
@@ -67,4 +64,6 @@ public class AboutUs extends AppCompatActivity {
         //close drawer
         MainActivity.closeDrawer(drawerLayout);
     }
+
+
 }
