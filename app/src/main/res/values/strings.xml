@@ -10,5 +10,8 @@
     <string name="mulchRate">Target Mulch Application Rate</string>
     <string name="weightBag">Weight of Mulch(per bag)</string>
     <string name="team">Sam Lam, Thanh Le, Tou Vang</string>
+    <string name="home">Home prototype</string>
+
+    <string name="erosion">Erosion Control Toolbox</string>
 
 </resources>

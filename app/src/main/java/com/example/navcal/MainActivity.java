@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -102,4 +103,10 @@ public class MainActivity extends AppCompatActivity {
         //close drawer
         closeDrawer(drawerLayout);
     }
+
+    public void caltransTool(View view){
+        Intent caltransToolIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://dot.ca.gov/programs/design/lap-erosion-control-design/tool-1-lap-erosion-control-toolbox"));
+        startActivity(caltransToolIntent);
+    }
+
 }
