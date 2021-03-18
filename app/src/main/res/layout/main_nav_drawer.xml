@@ -9,6 +9,7 @@
         android:layout_height="120dp"
         android:layout_margin="16dp"
         android:onClick="ClickLogo"
+        android:background="@color/greenCal"
         android:src="@drawable/ic_android"/>
 
     <TextView
@@ -31,6 +32,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:background="@color/greenCal"
         android:onClick="ClickHome">
 
         <TextView
@@ -38,6 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Home"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:padding="12dp"
             android:layout_marginStart="16dp"/>
         <ImageView
@@ -52,6 +56,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:background="@color/blueCal"
         android:onClick="ClickDashboard">
 
         <TextView
@@ -59,6 +64,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Dashboard/Resource"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:padding="12dp"
             android:layout_marginStart="16dp"/>
 
@@ -74,12 +81,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:background="@color/greenCal"
         android:onClick="ClickCalculator">
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Calculator UI"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:padding="12dp"
             android:layout_marginStart="16dp"/>
         <ImageView
@@ -94,12 +104,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:background="@color/blueCal"
         android:onClick="ClickCalculator2">
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Calculator Converter UI"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:padding="12dp"
             android:layout_marginStart="16dp"/>
         <ImageView
@@ -115,12 +128,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:background="@color/greenCal"
         android:onClick="ClickHistory">
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="History"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:padding="12dp"
             android:layout_marginStart="16dp"/>
         <ImageView
@@ -137,12 +153,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:background="@color/blueCal"
         android:onClick="ClickAbout">
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="About Us"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:padding="12dp"
             android:layout_marginStart="16dp"/>
         <ImageView

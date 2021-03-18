@@ -91,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
         MainActivity.redirectActivity(this, History.class);
     }
 
-
     public void ClickAbout(View view){
         //redirect activity to about us
         redirectActivity(this,AboutUs.class);
