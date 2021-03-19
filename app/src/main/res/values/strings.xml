@@ -3,6 +3,13 @@
 
     <string name="about">Student Project for Caltrans. Client: David Skinner and Michael Oguro</string>
     <string name="total">Total Mulch Needed for Project</string>
+    <string name="totalTank">Total Tank Loads Needed for Project</string>
+    <string name="tankSize">Tank Size</string>
+    <string name="mulchMixing">Mulch Mixing Rate</string>
+
+
+    <string name="gal">gal</string>
+    <string name="lbsGal">lbs/100 gal</string>
     <string name="sqFt">sq. ft</string>
     <string name="lbAcre">lbs/acre</string>
     <string name="lbsBag">lbs</string>
