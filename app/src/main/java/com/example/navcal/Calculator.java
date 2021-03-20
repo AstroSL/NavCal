@@ -18,8 +18,8 @@ public class Calculator extends AppCompatActivity {
     EditText number1, number2, number3, number4, number5;
     Button clear, add;
 
-    float result_num, bagT, result_num2, tankT2, tankSqFt;
-    double num1, num2, num3, num4, num5;
+    double result_num, bagT, result_num2, tankT2;
+    double num1, num2, num3, num4, num5, tankSqFt;
     double totalAcre = (num1 / num2);
     float result_bag;
     double acre = 43560 ;
@@ -82,7 +82,7 @@ public class Calculator extends AppCompatActivity {
             @SuppressLint({"DefaultLocale", "SetTextI18n"})
             @Override
             public void onClick(View v) {
-                
+
                 /*double num1 = Double.parseDouble(String.valueOf(number1.getText()));
                 double acre = 43560.0 ;//0.25 acre
                 num2.setText((Math.round(num1) / Integer.parseInt(String.valueOf(num3.getText()) )));
@@ -99,13 +99,14 @@ public class Calculator extends AppCompatActivity {
                 num5 = Double.parseDouble(number5.getText().toString());//mulch mixing rate
 
                 //total much needed for project
-                result_num = (float) (num2 * (num1/acre));//double acre = 43560 ;
-                bagT = (float)((result_num / num3 * 10) / 10);
+                result_num = (double) (num2 * (num1/acre));//double acre = 43560 ;
+                bagT = (double)((result_num / num3 * 10) / 10);//bags
+
 
                 //total tank loads needed for project
-                result_num2=(float)((num4 * num5) /100/ num3);//bags per tank
-                tankT2=(bagT/result_num2);//tank load
-                tankSqFt=(float)(num1/tankT2);//sq ft/tank
+                result_num2=(double)((num4 * num5) /100/ num3);//bags per tank
+                tankT2= (float)Math.round(bagT/result_num2 *100)/100;//tank load
+                tankSqFt = (double)(num1/tankT2);//sq ft/tank
 
 
 
