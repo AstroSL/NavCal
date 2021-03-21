@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 public class Calculator extends AppCompatActivity {
 
-
     DrawerLayout drawerLayout;
     TextView result, rbag, resultTank, tankLoad, sqFtTank;
     EditText number1, number2, number3, number4, number5;
@@ -20,13 +19,7 @@ public class Calculator extends AppCompatActivity {
 
     double result_num, bagT, result_num2, tankT2;
     double num1, num2, num3, num4, num5, tankSqFt;
-    double totalAcre = (num1 / num2);
-    float result_bag;
     double acre = 43560 ;
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,31 +32,14 @@ public class Calculator extends AppCompatActivity {
         number3=findViewById(R.id.number3);
         number4=findViewById(R.id.number4);
         number5=findViewById(R.id.number5);
-
-
-
-
         result=findViewById(R.id.result);
         clear=findViewById(R.id.clear);
-
-        result = (TextView)findViewById(R.id.result);
-        rbag = (TextView)findViewById(R.id.rBag);
-        resultTank = (TextView)findViewById(R.id.resultTank);
-        tankLoad = (TextView)findViewById(R.id.tankLoad);
-        sqFtTank = (TextView)findViewById(R.id.sqFeetTank);
-
-
-
-
-        number1 = (EditText)findViewById(R.id.number1);
-        number2 = (EditText)findViewById(R.id.number2);
-        number3 = (EditText)findViewById(R.id.number3);
-        number4 = (EditText)findViewById(R.id.number4);
-        number5 = (EditText)findViewById(R.id.number5);
-
-
-
-        add = (Button)findViewById(R.id.add);
+        add = findViewById(R.id.add);
+        result = findViewById(R.id.result);
+        rbag = findViewById(R.id.rBag);
+        resultTank = findViewById(R.id.resultTank);
+        tankLoad = findViewById(R.id.tankLoad);
+        sqFtTank = findViewById(R.id.sqFeetTank);
 
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,20 +53,10 @@ public class Calculator extends AppCompatActivity {
         });
 
 
-
         add.setOnClickListener(new View.OnClickListener() {
             @SuppressLint({"DefaultLocale", "SetTextI18n"})
             @Override
             public void onClick(View v) {
-
-                /*double num1 = Double.parseDouble(String.valueOf(number1.getText()));
-                double acre = 43560.0 ;//0.25 acre
-                num2.setText((Math.round(num1) / Integer.parseInt(String.valueOf(num3.getText()) )));
-                double bags = (num2 / Double.parseDouble(num3.getText()*10)/10);*/
-
-                /*num1 = Integer.parseInt(number1.getText().toString());//total
-                num2 = Integer.parseInt(number2.getText().toString());//mulch app
-                num3 = Integer.parseInt(number3.getText().toString());//bag weight*/
 
                 num1 = Double.parseDouble(number1.getText().toString());//total size
                 num2 = Double.parseDouble(number2.getText().toString());//mulch app
@@ -99,16 +65,13 @@ public class Calculator extends AppCompatActivity {
                 num5 = Double.parseDouble(number5.getText().toString());//mulch mixing rate
 
                 //total much needed for project
-                result_num = (double) (num2 * (num1/acre));//double acre = 43560 ;
-                bagT = (double)((result_num / num3 * 10) / 10);//bags
-
+                result_num = (num2 * (num1/acre));//double acre = 43560 ;
+                bagT = (result_num / num3 * 10) / 10;//bags
 
                 //total tank loads needed for project
-                result_num2=(double)((num4 * num5) /100/ num3);//bags per tank
+                result_num2= (num4 * num5) /100/ num3;//bags per tank
                 tankT2= (float)Math.round(bagT/result_num2 *100)/100;//tank load
-                tankSqFt = (double)(num1/tankT2);//sq ft/tank
-
-
+                tankSqFt = num1/tankT2;//sq ft/tank
 
                 //output text total mulch needed for project
                 result.setText(String.format("%.2f",result_num)+ " lbs of mulch");
@@ -118,22 +81,7 @@ public class Calculator extends AppCompatActivity {
                 resultTank.setText(String.format("%.2f", result_num2)+ "  bags per tank");
                 tankLoad.setText(String.format("%.2f", tankT2)+ "  tank loads");
                 sqFtTank.setText(String.format("%.2f", tankSqFt)+ " sq ft/tank");
-
-
-
-                //result.setText(String.valueOf(result_num) + " lbs of mulch");
-                //rbag.setText(String.valueOf(bagT) + " bags");
-
-
-
-                //result.setText(String.valueOf(Math.ceil(result_num)));//round up
-                //rbag.setText(String.valueOf(Math.ceil(bagT)));//round up
-
-
             }
-
-
-
         });
 
 
@@ -158,27 +106,24 @@ public class Calculator extends AppCompatActivity {
     }
 
     public void ClickCalculator2(View view) {
-        //recreate activty
+        //redirect activity to Cal2
         MainActivity.redirectActivity(this, Calculator2.class);
     }
 
     public void ClickHistory(View view) {
-        //recreate activty
+        //redirect activity to History
         MainActivity.redirectActivity(this, History.class);
     }
 
     public void ClickDashboard(View view){
-        //recreate activty
+        //redirect activity to Dashboard
         MainActivity.redirectActivity(this,Dashboard.class);
     }
 
 
-
-
     public void ClickAbout(View view){
-        //redirect activty to about us
+        //redirect activity to about us
         MainActivity.redirectActivity(this,AboutUs.class);
-
     }
 
     @Override
