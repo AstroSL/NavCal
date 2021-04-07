@@ -15,7 +15,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Team 7 prototype"
+        android:text="HydroMulch Calculator"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textAlignment="center"
@@ -27,28 +27,30 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:background="#636363"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
+        android:layout_height="44dp"
         android:background="@color/greenCal"
-        android:onClick="ClickHome">
+        android:gravity="center_vertical"
+        android:onClick="ClickHome"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_weight="1"
-            android:text="Home"
-            android:textStyle="bold"
-            android:textColor="@color/white"
             android:padding="12dp"
-            android:layout_marginStart="16dp"/>
+            android:text="Calculator"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
-            android:src="@drawable/ic_home"/>
+            android:src="@drawable/ic_cal" />
     </LinearLayout>
 
     <LinearLayout
@@ -73,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
-            android:src="@drawable/ic_web"/>
+            android:src="@drawable/ic_dashboard"/>
     </LinearLayout>
 
     <LinearLayout
@@ -82,29 +84,6 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:background="@color/greenCal"
-        android:onClick="ClickCalculator">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Calculator UI"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:padding="12dp"
-            android:layout_marginStart="16dp"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="48dp"
-            android:src="@drawable/ic_cal"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:background="@color/blueCal"
         android:onClick="ClickCalculator2">
         <TextView
             android:layout_width="0dp"
@@ -128,7 +107,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:background="@color/greenCal"
+        android:background="@color/blueCal"
         android:onClick="ClickHistory">
         <TextView
             android:layout_width="0dp"
@@ -153,7 +132,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:background="@color/blueCal"
+        android:background="@color/greenCal"
         android:onClick="ClickAbout">
         <TextView
             android:layout_width="0dp"

@@ -3,18 +3,39 @@ package com.example.navcal;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ListView;
+
+import java.io.Flushable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class History extends AppCompatActivity {
 
 
+    DataBasehandler dataBasehandler;
+    ListView listView;
+
+    SimpleDateFormat simpleDateFormat;
     DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+
+
+        dataBasehandler = new DataBasehandler(History.this);
+        ArrayList<Model> arrayList = dataBasehandler.getAllData();
+        listView = findViewById(R.id.list_view);
+        ListAdapter listAdapter = new ListAdapter(getApplicationContext(),arrayList);
+        listView.setAdapter(listAdapter);
+        listAdapter.notifyDataSetChanged();
+
 
         //assign var
         drawerLayout = findViewById(R.id.drawer_layout);
