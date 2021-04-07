@@ -13,13 +13,14 @@ import android.widget.TextView;
 public class Calculator extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
-    TextView result, rbag, resultTank, tankLoad, sqFtTank;
-    EditText number1, number2, number3, number4, number5;
+    TextView result, rbag, resultTank, tankLoad, sqFtTank, projName;
+    EditText number1, number2, number3, number4, number5, projectName;
     Button clear, add;
 
     double result_num, bagT, result_num2, tankT2;
     double num1, num2, num3, num4, num5, tankSqFt;
     double acre = 43560 ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,8 @@ public class Calculator extends AppCompatActivity {
         resultTank = findViewById(R.id.resultTank);
         tankLoad = findViewById(R.id.tankLoad);
         sqFtTank = findViewById(R.id.sqFeetTank);
+        projName = findViewById(R.id.projName);
+        projectName = findViewById(R.id.projectName);
 
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +52,7 @@ public class Calculator extends AppCompatActivity {
                 number3.getText().clear();
                 number4.getText().clear();
                 number5.getText().clear();
+                projectName.getText().clear();
             }
         });
 
@@ -72,6 +76,9 @@ public class Calculator extends AppCompatActivity {
                 result_num2= (num4 * num5) /100/ num3;//bags per tank
                 tankT2= (float)Math.round(bagT/result_num2 *100)/100;//tank load
                 tankSqFt = num1/tankT2;//sq ft/tank
+
+                //output text project name
+                projName.setText("Project Name: " + projectName.getText().toString());
 
                 //output text total mulch needed for project
                 result.setText(String.format("%.2f",result_num)+ " lbs of mulch");
