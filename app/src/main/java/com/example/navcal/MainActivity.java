@@ -27,22 +27,17 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     //initialize variable
-    DrawerLayout drawerLayout;
     DataBasehandler dataBasehandler;
 
-    TextView result, rbag, resultTank, tankLoad, sqFtTank;//, projName;
-    EditText number1, number2, number3, number4, number5;//, projectName;
+    DrawerLayout drawerLayout;
+    TextView result, rbag, resultTank, tankLoad, sqFtTank;
+    EditText number1, number2, number3, number4, number5, projectName;
     Button clear, add;
 
-    double result_num, bagT, result_num2, tankT2;
-    CharSequence num0;
-    double num1;
-    double num2;
-    double num3;
-    double num4;
-    double num5;
-    double tankSqFt;
-    double acre = 43560 ;
+    Float result_num, bagT, result_num2, tankT2;
+    Float num1, num2, num3, num4, num5, tankSqFt;
+    int acre = 43560 ;
+    String pro_name;
 
 
     @SuppressLint({"DefaultLocale", "SetTextI18n"})
@@ -55,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         //assign variable
         drawerLayout = findViewById(R.id.drawer_layout);
+        projectName=findViewById(R.id.projectName);
         number1=findViewById(R.id.number1);
         number2=findViewById(R.id.number2);
         number3=findViewById(R.id.number3);
@@ -74,12 +70,12 @@ public class MainActivity extends AppCompatActivity {
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                projectName.getText().clear();
                 number1.getText().clear();
                 number2.getText().clear();
                 number3.getText().clear();
                 number4.getText().clear();
                 number5.getText().clear();
-                //projectName.getText().clear();
             }
         });
 
@@ -101,11 +97,12 @@ public class MainActivity extends AppCompatActivity {
 
 
                 //num0 = getText(R.id.projectName);
-                num1 = Double.parseDouble(number1.getText().toString());//total size
-                num2 = Double.parseDouble(number2.getText().toString());//mulch app
-                num3 = Double.parseDouble(number3.getText().toString());//bag weight
-                num4 = Double.parseDouble(number4.getText().toString());//tank size
-                num5 = Double.parseDouble(number5.getText().toString());//mulch mixing rate
+                num1 = Float.parseFloat(number1.getText().toString());//total size
+                num2 = Float.parseFloat(number2.getText().toString());//mulch app
+                num3 = Float.parseFloat(number3.getText().toString());//bag weight
+                num4 = Float.parseFloat(number4.getText().toString());//tank size
+                num5 = Float.parseFloat(number5.getText().toString());//mulch mixing rate
+                pro_name = projectName.getText().toString();
 
                 //total much needed for project
                 result_num = (num2 * (num1/acre));//double acre = 43560 ;
@@ -116,8 +113,14 @@ public class MainActivity extends AppCompatActivity {
                 tankT2= (float)Math.round(bagT/result_num2 *100)/100;//tank load
                 tankSqFt = num1/tankT2;//sq ft/tank
 
-                //output text project name
-                //projName.setText("Project Name: " + projectName.getText().toString());
+                //total much needed for project
+                result_num = (num2 * (num1/acre));//double acre = 43560 ;
+                bagT = (result_num / num3 * 10) / 10;//bags
+
+                //total tank loads needed for project
+                result_num2= (num4 * num5) /100/ num3;//bags per tank
+                tankT2= (float)Math.round(bagT/result_num2 *100)/100;//tank load
+                tankSqFt = num1/tankT2;//sq ft/tank
 
                 //output text total mulch needed for project
                 result.setText(String.format("%.2f",result_num)+ " lbs of mulch");
@@ -128,10 +131,16 @@ public class MainActivity extends AppCompatActivity {
                 tankLoad.setText(String.format("%.2f", tankT2)+ "  tank loads");
                 sqFtTank.setText(String.format("%.2f", tankSqFt)+ " sq ft/tank");
 
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                 Date date = new Date();
-                Log.d("wagar",""+simpleDateFormat.format(date));
-                Model model = new Model(result_num,bagT,result_num2,tankT2,tankSqFt,""+simpleDateFormat.format(date));
+                Log.d("time",""+simpleDateFormat.format(date));
+                String string_result_num = String.format("%.2f",result_num);
+                String string_bagT = String.format("%.2f",bagT);
+                String string_result_num2 = String.format("%.2f",result_num2);
+                String string_tankT2 = String.format("%.2f",tankT2);
+                String string_tankSqFt = String.format("%.2f",tankSqFt);
+                Log.d("pResult",string_result_num);
+                Model model = new Model(string_result_num,string_bagT,string_result_num2,string_tankT2,string_tankSqFt,""+simpleDateFormat.format(date),pro_name);
                 dataBasehandler.setAllData(model);
             }
         });

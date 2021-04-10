@@ -23,17 +23,18 @@ public class DataBasehandler extends SQLiteOpenHelper {
     private static final String TABLE_COLUMN_FOUR = "tank_load";
     private static final String TABLE_COLUMN_FIVE = "sq_ft_tank";
     private static final String TABLE_COLUMN_SIX = "date_time";
+    private static final String TABLE_COLUMN_SEVEN = "project_name";
 
 
     public DataBasehandler(@Nullable Context context) {
-        super(context, "calulator", null, 3);
+        super(context, "calulator.db", null, 6);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String create_table = "CREATE TABLE " + TABLE_NAME + " ( " + TABLE_COLUMN_ONE + " FLOAT, " + TABLE_COLUMN_TWO + " FLOAT, " + TABLE_COLUMN_THREE + " FLOAT, "
-                + TABLE_COLUMN_FOUR + " FLOAT, " + TABLE_COLUMN_FIVE + " FLOAT, " + TABLE_COLUMN_SIX  +" DATETIME)";
+        String create_table = "CREATE TABLE " + TABLE_NAME + " ( " + TABLE_COLUMN_ONE + " TEXT, " + TABLE_COLUMN_TWO + " TEXT, " + TABLE_COLUMN_THREE + " TEXT, "
+                + TABLE_COLUMN_FOUR + " TEXT, " + TABLE_COLUMN_FIVE + " TEXT, " + TABLE_COLUMN_SIX  +" DATETIME, " + TABLE_COLUMN_SEVEN  +" TEXT)";
         db.execSQL(create_table);
 
     }
@@ -45,19 +46,19 @@ public class DataBasehandler extends SQLiteOpenHelper {
     public ArrayList<Model> getAllData() {
         ArrayList<Model> modelArrayList = new ArrayList<Model>();
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-//        String read_data = "SELECT * FROM " + TABLE_NAME +" ORDER BY datetime ("+TABLE_COLUMN_SIX+")" + " DESC LIMIT 1";
         String read_data = "SELECT * FROM " + TABLE_NAME +" ORDER BY " + TABLE_COLUMN_SIX + " DESC";
         Cursor cursor = sqLiteDatabase.rawQuery(read_data, null);
         if (cursor.moveToFirst()) {
             do {
-                double lbs_of_mulch = cursor.getDouble(0);
-                double bags = cursor.getDouble(1);
-                double bags_per_tank = cursor.getDouble(2);
-                double tank_load = cursor.getDouble(3);
-                double sq_ft_tank = cursor.getDouble(4);
+                String lbs_of_mulch = cursor.getString(0);
+                String bags = cursor.getString(1);
+                String bags_per_tank = cursor.getString(2);
+                String tank_load = cursor.getString(3);
+                String sq_ft_tank = cursor.getString(4);
                 String date_time = cursor.getString(5);
+                String project_name = cursor.getString(6);
 
-                Model model = new Model(lbs_of_mulch, bags, bags_per_tank,tank_load,sq_ft_tank,date_time);
+                Model model = new Model(lbs_of_mulch, bags, bags_per_tank,tank_load,sq_ft_tank,date_time,project_name);
                 modelArrayList.add(model);
             }
             while (cursor.moveToNext());
@@ -76,6 +77,7 @@ public class DataBasehandler extends SQLiteOpenHelper {
         contentValues.put(TABLE_COLUMN_FOUR, model.getTank_loads());
         contentValues.put(TABLE_COLUMN_FIVE, model.getSq_ft_tank());
         contentValues.put(TABLE_COLUMN_SIX, model.getDateTime());
+        contentValues.put(TABLE_COLUMN_SEVEN, model.getProject_name());
         sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
     }
 }

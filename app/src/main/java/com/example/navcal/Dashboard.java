@@ -32,10 +32,9 @@ public class Dashboard extends AppCompatActivity {
 
     EditText etCity, etCountry;
     TextView tvResult;
-    private final String url = "http://api.openweathermap.org/data/2.5/weather";//api.openweathermap.org/data/2.5/weather?q=London&units=imperial http://api.openweathermap.org/data/2.5/weather=imperial
-    //private final String url = "http://api.openweathermap.org/data/2.5/weather?q=London,uk";
-    private final String appid = "2e0b086364d240e013929bdc90603c86&units=imperial";//e53301e273fa0b66d05045d91b2742d3
-    DecimalFormat df = new DecimalFormat("#.##");//2e0b086364d240e013929bdc90603c86
+    private final String url = "http://api.openweathermap.org/data/2.5/weather";
+    private final String appid = "2e0b086364d240e013929bdc90603c86&units=imperial";
+    DecimalFormat df = new DecimalFormat("#.##");
 
 
     //initialize variable
@@ -131,7 +130,7 @@ public class Dashboard extends AppCompatActivity {
             if(!country.equals("")){
                 tempUrl = url + "?q=" + city + "," + country + "&appid=" + appid;
             }else {
-                tempUrl = url + "?q=" + city + "&appid=" + appid;
+                tempUrl = url + "?zip=" + city + "&appid=" + appid;
             }
             StringRequest stringRequest = new StringRequest(Request.Method.POST, tempUrl, new Response.Listener<String>() {
                 @Override

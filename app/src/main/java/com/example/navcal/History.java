@@ -20,8 +20,8 @@ public class History extends AppCompatActivity {
     DataBasehandler dataBasehandler;
     ListView listView;
 
-    SimpleDateFormat simpleDateFormat;
     DrawerLayout drawerLayout;
+    SimpleDateFormat simpleDateFormat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,9 @@ public class History extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
     }
 
+
+
+
     public void ClickMenu(View view) {
         //open drawer
         MainActivity.openDrawer(drawerLayout);
@@ -57,13 +60,13 @@ public class History extends AppCompatActivity {
     }
 
     public void ClickDashboard(View view){
-        //redirect activty to dash
+        //redirect activity to dash
         MainActivity.redirectActivity(this,Dashboard.class);
 
     }
 
     public void ClickCalculator(View view) {
-        //recreate activty
+        //recreate activity
         MainActivity.redirectActivity(this, Calculator.class);
     }
 

@@ -1,20 +1,29 @@
 package com.example.navcal;
 
 public class Model {
-    private double lbs_of_mulch;
-    private double bags;
-    private double bags_per_tank;
-    private double tank_loads;
-    private double sq_ft_tank;
+    private String lbs_of_mulch;
+    private String bags;
+    private String bags_per_tank;
+    private String tank_loads;
+    private String sq_ft_tank;
     private String dateTime;
+    private String project_name;
 
-    public Model(double lbs_of_mulch, double bags, double bags_per_tank, double tank_loads, double sq_ft_tank,String dateTime) {
+    public Model(String lbs_of_mulch, String bags, String bags_per_tank, String tank_loads, String sq_ft_tank,String dateTime,String project_name) {
         this.lbs_of_mulch = lbs_of_mulch;
         this.bags = bags;
         this.bags_per_tank = bags_per_tank;
         this.tank_loads = tank_loads;
         this.sq_ft_tank = sq_ft_tank;
         this.dateTime = dateTime;
+        this.project_name = project_name;
+    }
+    public String getProject_name() {
+        return project_name;
+    }
+
+    public void setProject_name(String project_name) {
+        this.project_name = project_name;
     }
 
     public String getDateTime() {
@@ -24,43 +33,43 @@ public class Model {
     public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
     }
-    public double getLbs_of_mulch() {
+    public String getLbs_of_mulch() {
         return lbs_of_mulch;
     }
 
-    public void setLbs_of_mulch(double lbs_of_mulch) {
+    public void setLbs_of_mulch(String lbs_of_mulch) {
         this.lbs_of_mulch = lbs_of_mulch;
     }
 
-    public double getBags() {
+    public String getBags() {
         return bags;
     }
 
-    public void setBags(int bags) {
+    public void setBags(String bags) {
         this.bags = bags;
     }
 
-    public double getBags_per_tank() {
+    public String getBags_per_tank() {
         return bags_per_tank;
     }
 
-    public void setBags_per_tank(double bags_per_tank) {
+    public void setBags_per_tank(String bags_per_tank) {
         this.bags_per_tank = bags_per_tank;
     }
 
-    public double getTank_loads() {
+    public String getTank_loads() {
         return tank_loads;
     }
 
-    public void setTank_loads(double tank_loads) {
+    public void setTank_loads(String tank_loads) {
         this.tank_loads = tank_loads;
     }
 
-    public double getSq_ft_tank() {
+    public String getSq_ft_tank() {
         return sq_ft_tank;
     }
 
-    public void setSq_ft_tank(double sq_ft_tank) {
+    public void setSq_ft_tank(String sq_ft_tank) {
         this.sq_ft_tank = sq_ft_tank;
     }
 }
