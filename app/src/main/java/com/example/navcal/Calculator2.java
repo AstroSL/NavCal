@@ -476,6 +476,12 @@ public class Calculator2 extends AppCompatActivity {
         MainActivity.redirectActivity(this,Dashboard.class);
 
     }
+
+    public void ClickSettings(View view) {
+        //recreate activty
+        MainActivity.redirectActivity(this, Settings.class);
+    }
+
     public void ClickAbout(View view){
         //redirect activty to about us
         MainActivity.redirectActivity(this,AboutUs.class);

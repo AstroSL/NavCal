@@ -16,8 +16,6 @@
     <color name="greenCal">#00b1b0</color>
     <color name="orange">#ff8000</color>
     <color name="grey">#212121</color>
-    <color name="textColor">#000000</color>
-
-
+    <color name="textColor">#FFFFFF</color>
 
 </resources>

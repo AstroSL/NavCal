@@ -56,6 +56,11 @@ public class AboutUs extends AppCompatActivity {
         MainActivity.redirectActivity(this, History.class);
     }
 
+    public void ClickSettings(View view) {
+        //recreate activty
+        MainActivity.redirectActivity(this, Settings.class);
+    }
+
     public void ClickAbout(View view){
         recreate();
 

@@ -91,6 +91,11 @@ public class Dashboard extends AppCompatActivity {
         MainActivity.redirectActivity(this, History.class);
     }
 
+    public void ClickSettings(View view) {
+        //recreate activty
+        MainActivity.redirectActivity(this, Settings.class);
+    }
+
     public void ClickAbout(View view){
         //redirect activty to about us
         MainActivity.redirectActivity(this,AboutUs.class);

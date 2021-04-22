@@ -70,6 +70,11 @@ public class History extends AppCompatActivity {
         MainActivity.redirectActivity(this, Calculator.class);
     }
 
+    public void ClickSettings(View view) {
+        //recreate activty
+        MainActivity.redirectActivity(this, Settings.class);
+    }
+
     public void ClickAbout(View view){
         MainActivity.redirectActivity(this, AboutUs.class);
 
