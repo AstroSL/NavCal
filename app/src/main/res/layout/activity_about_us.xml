@@ -48,6 +48,7 @@
             android:layout_height="match_parent"
             android:text="About Us"
             android:textSize="50sp"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:gravity="center_horizontal"/>
 
