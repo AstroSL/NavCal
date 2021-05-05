@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16dp"
+        android:textStyle="bold"
         android:textAlignment="center"
         android:text="project name"/>
 
@@ -72,7 +73,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            android:text="Total Mulch Needed for Peoject"/>
+            android:text="Total Mulch Needed for Project"/>
 
         <Button
             android:id="@+id/btn_share"
