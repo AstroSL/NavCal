@@ -26,8 +26,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Calculation History"
-            android:textSize="22sp"
+            android:textColor="@android:color/black"
             android:textStyle="bold"
+            android:textSize="22sp"
             android:gravity="center_horizontal"/>
 
 
