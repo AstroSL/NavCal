@@ -18,6 +18,9 @@
     <string name="weightBag">Weight of Mulch(per bag)</string>
     <string name="home">Home prototype</string>
     <string name="darkMode">Dark Mode</string>
+    <string name="CalcHelp">Calculations will automatically be saved into history. Project name will not be displayed in the output, but will be displayed in the history output.</string>
+    <string name="DashHelp">OpenWeatherMap is the API source of the weather updates. The weather output displays a minute by minute forecast.</string>
+    <string name="HistoryHelp">There is no limit to the amount of saved calculations. The saved data can be shared through email, text, and Google Drive. History can be deleted by clearing app cache in the phone memory settings</string>
 
     <string name="erosion">Erosion Control Toolbox</string>
 

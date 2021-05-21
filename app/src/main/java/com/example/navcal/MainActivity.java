@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
     TextView result, rbag, resultTank, tankLoad, sqFtTank;
     EditText number1, number2, number3, number4, number5, projectName;
     Button clear, add;
-   // SwitchCompat switchCompat;
-   // SharedPreferences sharedPreferences = null;
 
     Float result_num, bagT, result_num2, tankT2;
     Float num1, num2, num3, num4, num5, tankSqFt;
@@ -204,9 +202,9 @@ public class MainActivity extends AppCompatActivity {
         MainActivity.redirectActivity(this, History.class);
     }
 
-    public void ClickSettings(View view) {
+    public void ClickHelp(View view) {
         //redirect activity to settings
-        redirectActivity(this,Settings.class);
+        redirectActivity(this, Help.class);
     }
 
     public void ClickAbout(View view){
