@@ -5,10 +5,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class AboutUs extends AppCompatActivity {
     //initialize var
     DrawerLayout drawerLayout;
+    private TextView textOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +19,14 @@ public class AboutUs extends AppCompatActivity {
         //assign var
         drawerLayout = findViewById(R.id.drawer_layout);
 
+        textOut = (TextView) findViewById(R.id.textView2);
+
+        textOut.setText("This is Team 7's version of a HydroMulch calculator for their CSC 131 client sponsored project." +
+                " Team 7 consists of 3 students from Sacramento State majoring in Computer Science and hoping to gain experience from this project." +
+                " The client that sponsored this project was CalTrans and provided guidelines to create an erosion control calculator for construction use.\n" +
+                "\n" +
+                "CalTrans, also known as the California Department of Transportation, needed an app that can create an estimate of the amount of mulch and tank loads needed for their finished construction sites. " +
+                "They are trying to use this information to keep track of the materials used and to help make it easier to calculate for their workers so that they can provide sufficient erosion control in their finished construction sites.");
 
     }
 
