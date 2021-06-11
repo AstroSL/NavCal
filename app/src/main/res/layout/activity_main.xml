@@ -232,15 +232,15 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="180dp"
             android:text="@string/totalTank"
+            android:textColor="@color/black"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.264"
-            app:layout_constraintHorizontal_bias="0.269"
-
+            app:layout_constraintHorizontal_bias="0.307"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/resultTank"
@@ -277,18 +277,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.923" />
-
-        <TextView
-            android:id="@+id/calc"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="bottom"
-            android:text="calculator prototype"
-            android:textSize="23sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="-4dp"
-            tools:layout_editor_absoluteY="51dp" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

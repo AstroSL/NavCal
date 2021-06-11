@@ -65,7 +65,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Dashboard"
-            android:text="Weather"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:padding="12dp"
